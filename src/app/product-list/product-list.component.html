@@ -8,6 +8,7 @@
             <th>description</th>
             <th>price</th>
             <th>stock</th>
+            <th>encargar</th>
         </tr>
     </thead>
     <tbody>
@@ -17,7 +18,12 @@
             <td>{{product.description}}</td>
             <td>{{product.price | currency}}</td>
             <td><span *ngIf ="product.stock==0"> SIN STOCK</span>
-                <span *ngIf ="product.stock>0">{{product.stock}}</span></td>
+                <span *ngIf ="product.stock>0">{{product.stock}}</span>
+            </td>
+            <td><button (click)="dawnQuantity(product)">-</button>
+                {{product.quantity}}
+                <button (click)="upQuantity(product)">+</button>
+            </td>
         </tr>
 
     </tbody>

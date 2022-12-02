@@ -15,7 +15,8 @@ export class ProductListComponent {
       price: 1200,
       stock: 4,
       image: "assets/img/serum.jpeg",
-      clearance: false
+      clearance: false,
+      quantity: 0
     },
     {
       name:"Crema Hidratante",
@@ -23,7 +24,8 @@ export class ProductListComponent {
       price: 1000,
       stock: 3,
       image: "assets/img/serum.jpeg",
-      clearance: true
+      clearance: true,
+      quantity: 0
     },
     {
       name:"Agua micelar",
@@ -31,10 +33,19 @@ export class ProductListComponent {
       price: 800,
       stock: 0,
       image: "assets/img/serum.jpeg",
-      clearance: false
+      clearance: false,
+      quantity: 0
     }
 
-  ]
- 
+  ];
+
+  upQuantity(product: Product): void{
+    if(product.quantity < product.stock)
+    product.quantity++;
+  }
+ dawnQuantity(product: Product): void{
+  if(product.quantity > 0)
+    product.quantity--;
+  }
 
 }
