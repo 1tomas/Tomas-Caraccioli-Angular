@@ -7,7 +7,8 @@
             <th>description</th>
             <th>price</th>
             <th>stock</th>
-            <th>encargar</th>
+            <th>catidad</th>
+            <th>compra</th>
         </tr>
     </thead>
     <tbody>
@@ -22,8 +23,8 @@
             <td>
             <app-value-integer [(quantity)]="product.quantity" [max]="product.stock" *ngIf ="product.stock">
             </app-value-integer>
-            <button (click)="addToCart(product)">Comprar</button>
             </td>
+            <td><button (click)="addToCart(product)">Comprar</button></td>
         </tr>
 
     </tbody>
