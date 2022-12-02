@@ -5,3 +5,7 @@ img{
 .clearance{
     background-color: rgb(92, 192, 92);
 }
+
+table{
+    width: 1000px;
+}
