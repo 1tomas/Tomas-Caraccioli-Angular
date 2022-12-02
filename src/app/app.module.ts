@@ -7,6 +7,7 @@ import { BrumaAboutComponent } from './bruma-about/bruma-about.component';
 import { BrumaProductsComponent } from './bruma-products/bruma-products.component';
 import { CartComponent } from './cart/cart.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ValueIntegerComponent } from './value-integer/value-integer.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AppRoutingModule } from './app-routing.module';
     ProductListComponent,
     BrumaAboutComponent,
     BrumaProductsComponent,
-    CartComponent
+    CartComponent,
+    ValueIntegerComponent
   ],
   imports: [
     BrowserModule,
