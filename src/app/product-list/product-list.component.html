@@ -19,9 +19,11 @@
             <td><span *ngIf ="product.stock==0"> SIN STOCK</span>
                 <span *ngIf ="product.stock>0">{{product.stock}}</span>
             </td>
-            <td><app-value-integer [product]="product" *ngIf ="product.stock"></app-value-integer>
+            <td>
+            <app-value-integer [(quantity)]="product.quantity" [max]="product.stock" *ngIf ="product.stock">
+            </app-value-integer>
+            <button (click)="addToCart(product)">Comprar</button>
             </td>
-            
         </tr>
 
     </tbody>

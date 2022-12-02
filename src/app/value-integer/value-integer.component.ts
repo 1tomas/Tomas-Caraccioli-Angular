@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '../product-list/product';
 
 @Component({
@@ -9,20 +9,22 @@ import { Product } from '../product-list/product';
 
 export class ValueIntegerComponent {  
   
-  constructor(){
-  }
   @Input()
-  product: Product;
+  quantity: number;
+  @Input()
+  max: number;
+  @Output()
+  quantityChange: EventEmitter<number> = new EventEmitter<number>();
 
-  upQuantity(product: Product): void{
-    if(product.quantity < product.stock)
-    product.quantity++;
-
+  upQuantity(): void{
+    if(this.quantity < this.max)
+    this.quantity++;
+    this.quantityChange.emit(this.quantity);
   }
-  dawnQuantity(product: Product): void{
-  if(product.quantity > 0)
-    product.quantity--;
-  
+  downQuantity(): void{
+    if(this.quantity > 0)
+      this.quantity--;
+      this.quantityChange.emit(this.quantity); 
   }
   
 }
