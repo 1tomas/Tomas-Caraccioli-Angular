@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { observable } from 'rxjs';
+import { Product } from '../product-list/product';
 import { ProductsCartService } from '../products-cart.service'
 @Component({
   selector: 'app-cart',
@@ -6,5 +8,11 @@ import { ProductsCartService } from '../products-cart.service'
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
-  constructor(private cart: ProductsCartService){}
+
+  cartList: Product[];
+
+  constructor(private cart: ProductsCartService){
+
+      cart.cartList.subscribe((observable)=>this.cartList = observable);
+  }
 }
